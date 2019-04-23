@@ -3,3 +3,9 @@ Theme Name: Golden Pothos
 Author: Agnieszka Herod
 Version: 1.0
 */
+
+body {
+  display: block;
+  background: #26b450;
+}
+/*# sourceMappingURL=style.css.map */
