@@ -54,6 +54,13 @@ gulp.task('scripts', function () {
         }));
 });
 
+
+gulp.task('php', function () {
+    gulp.src('./*.php')
+        .pipe(gulp.dest('./'))
+});
+
+
 gulp.task('browserSync', function () {
     browserSync.init({
         open: false,
@@ -68,6 +75,7 @@ gulp.task('watch', ['browserSync', 'styles', 'scripts'], function () {
     // gulp.watch(js_paths, ['browserSync', 'scripts']);
     gulp.watch([js_paths], ['scripts']);
     gulp.watch([sass_paths], ['styles']);
+    gulp.watch('./*.php', ['php']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);
