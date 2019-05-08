@@ -4,8 +4,33 @@ Author: Agnieszka Herod
 Version: 1.0
 */
 
-body {
-  background: #fff;
+html {
+  font-size: 1.2rem;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-success,
+.btn-primary {
+  border-color: #9bad57;
+  background: #9bad57;
+}
+
+.btn-success:hover,
+.btn-primary:hover {
+  border: 1px solid #7d8c45;
+  background: #7d8c45;
+}
+
+.btn-primary {
+  border-color: #a7bf72;
+  background: #a7bf72;
+}
+
+html {
+  font-size: 1rem;
 }
 
 .pagination {
@@ -19,5 +44,130 @@ body {
 
 .pagination .page-numbers {
   color: var(--dark);
+}
+
+.mr-auto {
+  margin-right: 0 !important;
+}
+
+.jumbotron {
+  background: #fff;
+  background: url("http://localhost/wordpress/wp-content/themes/golden-pothos/src/images/floral.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.jumbotron span {
+  color: #9bad57;
+}
+
+.jumbotron .my-4 {
+  max-height: 300px;
+}
+
+.jumbotron .btn {
+  margin-top: 20px;
+}
+
+.jumbotron h1 {
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+.jumbotron .title-highlight {
+  color: #000;
+  position: relative;
+  z-index: 2;
+}
+
+.jumbotron .title-highlight:after {
+  content: '';
+  width: 100%;
+  height: 10%;
+  background: #9bad57;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+.jumbotron .title-highlight:hover {
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  color: white;
+}
+
+.jumbotron .title-highlight:hover:after {
+  -webkit-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  height: 80%;
+  transition: all .3s ease-in;
+}
+
+.jumbotron .container-fluid {
+  background: #f4f7e6;
+  background-blend-mode: lighten;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-form label {
+  display: none;
+}
+
+.search-form .search-field {
+  border: 0;
+  border-bottom: 1px solid #a7bf72;
+  width: 100%;
+  outline-color: #9bad57;
+  padding-left: 40px;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
