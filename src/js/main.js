@@ -5,5 +5,4 @@
 
     $('button').addClass("test");
 
-
 }(jQuery));
