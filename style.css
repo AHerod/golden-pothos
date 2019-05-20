@@ -50,6 +50,17 @@ html {
   margin-right: 0 !important;
 }
 
+.navbar-brand {
+  padding-left: 20px;
+}
+
+.navbar-brand h1 {
+  font-size: 1.4rem;
+  padding-left: 5px;
+  line-height: 1.4rem;
+  margin: 0;
+}
+
 .jumbotron {
   background: #fff;
   background: url("http://localhost/wordpress/wp-content/themes/golden-pothos/src/images/floral.jpg");

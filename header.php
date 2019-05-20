@@ -13,10 +13,12 @@
 
 <header class="sticky-top">
     <nav class="navbar navbar-light navbar-expand-md" role="navigation" style="background-color: #f4f7e6;">
-        <a class="navbar-brand" href="#">
-            <img src="http://localhost/wordpress/wp-content/themes/golden-pothos/src/images/plant.svg" width="40"
-                 height="40" class="d-inline-block align-center" alt="">
-            Golden Pothos
+        <a class="navbar-brand d-flex justify-content-center align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <img src="http://localhost/wordpress/wp-content/themes/golden-pothos/src/images/plant2.png" width="45"
+                 height="60" class="d-inline-block align-center" alt="">
+            <h1>
+                <?php echo wp_get_theme()->name; ?>
+            </h1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
@@ -42,6 +44,6 @@
         </div>
     </nav>
     <div class="header-search">
-        <?php get_search_form(); ?>
+		<?php get_search_form(); ?>
     </div>
 </header>
