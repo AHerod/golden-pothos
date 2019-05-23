@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php wp_title(); ?></title>
+    <?php include ( 'criticalCSS.php') ?>
 	<?php wp_head(); ?>
 </head>
 
@@ -14,7 +15,7 @@
 <header class="sticky-top">
     <nav class="navbar navbar-light navbar-expand-md" role="navigation" style="background-color: #f4f7e6;">
         <a class="navbar-brand d-flex justify-content-center align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <img src="http://localhost/wordpress/wp-content/themes/golden-pothos/src/images/plant2.png" width="45"
+            <img src="http://localhost/wordpress/wp-content/themes/golden-pothos/src/images/golden_pothos_logo.svg" width="45"
                  height="60" class="d-inline-block align-center" alt="">
             <h1>
                 <?php echo wp_get_theme()->name; ?>

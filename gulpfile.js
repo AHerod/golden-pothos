@@ -8,8 +8,49 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     groupmq = require('gulp-group-css-media-queries'),
     browserSync = require('browser-sync'),
-    sass_paths = './src/css/**/*.scss';
-js_paths = './src/js/*.js';
+    concat = require('gulp-concat-util'),
+    rename = require('gulp-rename'),
+    //uglify to minify js
+    uglify = require('gulp-uglify'),
+    //clean to minify css
+    cleanCSS = require('gulp-clean-css');
+    //PATHS variables
+    sass_paths = './src/css/**/*.scss',
+    js_paths = './src/js/*.js';
+
+gulp.task('critical', (function () {
+    gulp.src('./src/css/components/front-page.scss')
+        .pipe(plumber())
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
+        .pipe(sass({
+            indentType: 'tab',
+            indentWidth: 1,
+            outputStyle: 'expanded',
+        })).on('error', sass.logError)
+        .pipe(groupmq())
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(postcss([
+            autoprefixer({
+                browsers: ['last 2 versions'],
+                cascade: false,
+            })
+        ]))
+        .pipe(sourcemaps.write('./'))
+        .pipe(browserSync.stream({
+            stream: true
+        }))
+        .pipe(cleanCSS())
+        .pipe(concat.header('<style>'))
+        .pipe(concat.footer('</style>'))
+        .pipe(rename({
+            basename: 'criticalCSS',
+            extname: '.php'
+        }))
+        .pipe(gulp.dest('./'))
+}));
 
 gulp.task('styles', (function () {
     gulp.src('./src/css/style.scss')
@@ -69,7 +110,7 @@ gulp.task('browserSync', function () {
 });
 
 
-gulp.task('watch', ['browserSync', 'styles', 'scripts'], function () {
+gulp.task('watch', ['critical','browserSync', 'styles', 'scripts'], function () {
 
     // gulp.watch([sass_paths, js_paths] ,['browserSync', 'styles', 'scripts']);
     // gulp.watch(js_paths, ['browserSync', 'scripts']);
