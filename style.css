@@ -4,8 +4,100 @@ Author: Agnieszka Herod
 Version: 1.0
 */
 
-body {
-  display: block;
-  background: #26b450;
+html {
+  font-size: 1.2rem;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-success,
+.btn-primary {
+  border-color: #9bad57;
+  background: #9bad57;
+}
+
+.btn-success:hover,
+.btn-primary:hover {
+  border: 1px solid #7d8c45;
+  background: #7d8c45;
+}
+
+.btn-primary {
+  border-color: #a7bf72;
+  background: #a7bf72;
+}
+
+html {
+  font-size: 1rem;
+}
+
+.pagination {
+  font-weight: lighter;
+}
+
+.pagination .current {
+  padding: 0;
+  font-weight: bold;
+}
+
+.pagination .page-numbers {
+  color: var(--dark);
+}
+
+.mr-auto {
+  margin-right: 0 !important;
+}
+
+.navbar-brand {
+  padding-left: 20px;
+}
+
+.navbar-brand h1 {
+  font-size: 1.4rem;
+  padding-left: 5px;
+  line-height: 1.4rem;
+  margin: 0;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-form label {
+  display: none;
+}
+
+.search-form .search-field {
+  border: 0;
+  border-bottom: 1px solid #a7bf72;
+  width: 100%;
+  outline-color: #9bad57;
+  padding-left: 40px;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
